@@ -15,6 +15,16 @@ list.Add(1000);
 
 list.AddRange(list);
 
+StackDemo<int> stack = new StackDemo<int>();
+
+stack.Push(1);
+stack.Push(2);
+stack.Push(3);
+stack.Push(8);
+
+Console.WriteLine("Deleted item: " + stack.Pop());
+Console.WriteLine("Top element of stack: " + stack.Peek());
+
 //list.Clear();
 
 bool result = list.Remove(45);

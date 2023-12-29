@@ -152,12 +152,11 @@ public class ListDemo<T> : IEnumerable,ICollection<T>
     public bool Remove(T item)
     {
         int currentCapacity = _data.Length;
-        int newCount = _count - 1;
         int indexOf = GetIndex(item);
         if (indexOf == -1)
             return false;
         var newArray = Remove(indexOf);
-        if (currentCapacity/2 >= newCount)
+        if (currentCapacity/2 >= newArray.Length)
         {
             Shrink(newArray);
         }
