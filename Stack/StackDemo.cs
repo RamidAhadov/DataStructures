@@ -2,9 +2,9 @@ using System.Collections;
 using System.Diagnostics;
 using ListDemo.Exceptions;
 
-namespace ListDemo;
+namespace ListDemo.Stack;
 
-[DebuggerTypeProxy(typeof(ICollectionDebugView<>))]
+[DebuggerTypeProxy(typeof(StackDebugView<>))]
 [DebuggerDisplay("Count = {Count}")]
 public class StackDemo<T>:IEnumerable<T>,ICollection
 {
@@ -25,8 +25,8 @@ public class StackDemo<T>:IEnumerable<T>,ICollection
     
     public bool IsSynchronized => false;
     
-    public object SyncRoot => this; // Research it
-    
+    public object SyncRoot => this;
+
     // There are in the stack 3 common methods : Push, Pop, Peek
     // Peek - Returns element at top of the stack without remove it.
     // Pop - Return element at top of the stack and removes it.
@@ -160,6 +160,10 @@ public class StackDemo<T>:IEnumerable<T>,ICollection
 
     public bool Contains(T item)
     {
+        if (item == null)
+            return false;
+        if (_capacity == 0)
+            return false;
         for (int i = 0; i < _count; i++)
         {
             if (Equals(_data[i],item))

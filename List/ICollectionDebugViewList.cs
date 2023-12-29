@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace ListDemo;
+namespace ListDemo.List;
 
 internal sealed class ICollectionDebugView<T>
 {

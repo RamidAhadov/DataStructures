@@ -3,9 +3,9 @@ using System.ComponentModel;
 using System.Diagnostics;
 using ListDemo.Exceptions;
 
-namespace ListDemo;
+namespace ListDemo.List;
 
-[DebuggerTypeProxy(typeof(ICollectionDebugView<>))]
+[DebuggerTypeProxy(typeof(ICollectionDebugView<>))] //Front: Stack.
 [DebuggerDisplay("Count = {Count}")]
 public class ListDemo<T> : IEnumerable,ICollection<T>
 {
@@ -69,10 +69,9 @@ public class ListDemo<T> : IEnumerable,ICollection<T>
     [Description("To add a new element to the list.")]
     public void Add(T item)
     {
-        T[] array = _data;
         if (_count < _capacity)
         {
-            array[_count] = item;
+            _data[_count] = item;
             _count++;
         }
         else
@@ -156,12 +155,49 @@ public class ListDemo<T> : IEnumerable,ICollection<T>
         if (indexOf == -1)
             return false;
         var newArray = Remove(indexOf);
-        if (currentCapacity/2 >= newArray.Length)
+        if ((currentCapacity / 2) >= _count)
         {
-            Shrink(newArray);
+            _data = Shrink(newArray);
+            return true;
         }
-        
+
+        _data = newArray;
         return true;
+    }
+    
+    private T[] Remove(int index)
+    {
+        if (index < 0)
+            throw new NegativeIndexException(ConstantMessages.NegativeIndex);
+        if (_capacity == _count)
+        {
+            T[] adjustedArray = new T[_capacity]; 
+            Array.Copy(_data,0,adjustedArray,0,_count-1);
+            _count--;
+            return adjustedArray;
+        }
+        Array.Copy(_data,index+1,_data,index,_count - index);
+        //Array.Copy(_data,index +1, adjustedArray);
+        _count--;
+        return _data;
+    }// 1 2 3 4 5 6 7 8
+    //  1 2 3 4 5 6 7 8
+    //  0 0 0 0 0 0 0 0      3
+    //  1 2 3 5 6 7 8 0
+    
+    private T[] Shrink(T[] array)
+    {
+        int currentLenght = array.Length;
+        bool isEven = currentLenght % 2 == 0;
+        if (isEven && currentLenght > 0)
+        {
+            T[] newArray = new T[currentLenght / 2];
+            Array.Copy(array,0,newArray,0,_count);
+            _capacity = currentLenght / 2;
+            return newArray;
+        }
+
+        return array;
     }
     
     bool ICollection<T>.Remove(T item)
@@ -201,29 +237,6 @@ public class ListDemo<T> : IEnumerable,ICollection<T>
         return _data[index];
     }
 
-    private T[] Remove(int index)
-    {
-        if (index < 0)
-            throw new NegativeIndexException(ConstantMessages.NegativeIndex);
-        Array.Copy(_data,index+1,_data,index,_count - index-1);
-        _count--;
-        return _data;
-    }
-    
-    private T[] Shrink(T[] array)
-    {
-        int currentLenght = array.Length;
-        bool isEven = currentLenght % 2 == 0;
-        if (isEven && currentLenght > 0)
-        {
-            T[] newArray = new T[currentLenght / 2];
-            array.CopyTo(newArray,0);
-            _capacity = currentLenght / 2;
-            return newArray;
-        }
-
-        return array;
-    }
     public bool Contains(T item)
     {
         for (int i = 0; i < _count; i++)
