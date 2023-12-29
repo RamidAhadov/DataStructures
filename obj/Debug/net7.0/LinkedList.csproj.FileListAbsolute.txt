@@ -1,0 +1,15 @@
+/Users/macbook/RiderProjects/DataStructures/LinkedList/bin/Debug/net7.0/LinkedList
+/Users/macbook/RiderProjects/DataStructures/LinkedList/bin/Debug/net7.0/LinkedList.deps.json
+/Users/macbook/RiderProjects/DataStructures/LinkedList/bin/Debug/net7.0/LinkedList.runtimeconfig.json
+/Users/macbook/RiderProjects/DataStructures/LinkedList/bin/Debug/net7.0/LinkedList.dll
+/Users/macbook/RiderProjects/DataStructures/LinkedList/bin/Debug/net7.0/LinkedList.pdb
+/Users/macbook/RiderProjects/DataStructures/LinkedList/obj/Debug/net7.0/LinkedList.csproj.AssemblyReference.cache
+/Users/macbook/RiderProjects/DataStructures/LinkedList/obj/Debug/net7.0/LinkedList.GeneratedMSBuildEditorConfig.editorconfig
+/Users/macbook/RiderProjects/DataStructures/LinkedList/obj/Debug/net7.0/LinkedList.AssemblyInfoInputs.cache
+/Users/macbook/RiderProjects/DataStructures/LinkedList/obj/Debug/net7.0/LinkedList.AssemblyInfo.cs
+/Users/macbook/RiderProjects/DataStructures/LinkedList/obj/Debug/net7.0/LinkedList.csproj.CoreCompileInputs.cache
+/Users/macbook/RiderProjects/DataStructures/LinkedList/obj/Debug/net7.0/LinkedList.dll
+/Users/macbook/RiderProjects/DataStructures/LinkedList/obj/Debug/net7.0/refint/LinkedList.dll
+/Users/macbook/RiderProjects/DataStructures/LinkedList/obj/Debug/net7.0/LinkedList.pdb
+/Users/macbook/RiderProjects/DataStructures/LinkedList/obj/Debug/net7.0/LinkedList.genruntimeconfig.cache
+/Users/macbook/RiderProjects/DataStructures/LinkedList/obj/Debug/net7.0/ref/LinkedList.dll
