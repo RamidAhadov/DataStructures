@@ -1,9 +1,9 @@
 using System.Collections;
 using System.ComponentModel;
 using System.Diagnostics;
-using ListDemo.Exceptions;
+using DataStructuresDemo.Exceptions;
 
-namespace ListDemo.List;
+namespace DataStructuresDemo.List;
 
 [DebuggerTypeProxy(typeof(ICollectionDebugView<>))] //Front: Stack.
 [DebuggerDisplay("Count = {Count}")]

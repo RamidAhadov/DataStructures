@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Diagnostics;
-using ListDemo.Exceptions;
+using DataStructuresDemo.Exceptions;
 
-namespace ListDemo.Queue;
+namespace DataStructuresDemo.Queue;
 
 [DebuggerTypeProxy(typeof(QueueDebugView<>))]
 [DebuggerDisplay("Count = {Count}")]

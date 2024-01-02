@@ -1,4 +1,4 @@
-namespace ListDemo.Exceptions;
+namespace DataStructuresDemo.Exceptions;
 
 public class DequeueException:Exception
 {

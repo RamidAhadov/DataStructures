@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/macbook/RiderProjects/DataStructures/ListDemo/ListDemo.csproj",
-      "projectName": "ListDemo",
-      "projectPath": "/Users/macbook/RiderProjects/DataStructures/ListDemo/ListDemo.csproj",
+      "projectUniqueName": "/Users/macbook/RiderProjects/DataStructures/DataStructuresDemo/DataStructuresDemo.csproj",
+      "projectName": "DataStructuresDemo",
+      "projectPath": "/Users/macbook/RiderProjects/DataStructures/DataStructuresDemo/DataStructuresDemo.csproj",
       "packagesPath": "/Users/macbook/.nuget/packages/",
-      "outputPath": "/Users/macbook/RiderProjects/DataStructures/ListDemo/obj/",
+      "outputPath": "/Users/macbook/RiderProjects/DataStructures/DataStructuresDemo/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/macbook/.nuget/NuGet/NuGet.Config"

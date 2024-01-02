@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace ListDemo.Queue
+namespace DataStructuresDemo.Queue
 {
     internal sealed class QueueDebugView<T>
     {

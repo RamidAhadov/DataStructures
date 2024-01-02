@@ -1,4 +1,4 @@
-namespace ListDemo.Exceptions;
+namespace DataStructuresDemo.Exceptions;
 
 public static class ConstantMessages
 {
@@ -8,4 +8,6 @@ public static class ConstantMessages
     public static string ArrayLenghtOutOfTheBound = "The lenght of the array was out of the bound.";
     public static string EmptyArray = "There is not any element in the array.";
     public static string NullItem = "The given item was null.";
+    public static string EmptyList = "Current list is empty.";
+    public static string ItemNotFound = "Item not found in current context.";
 }

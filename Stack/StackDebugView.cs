@@ -3,7 +3,7 @@
 
 using System.Diagnostics;
 
-namespace ListDemo.Stack
+namespace DataStructuresDemo.Stack
 {
     internal sealed class StackDebugView<T>
     {
