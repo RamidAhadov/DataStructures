@@ -1,3 +1,3 @@
-// All implementation tested at here.
+// All implementations tested at here.
 
 Console.WriteLine("Hello everyone!")
