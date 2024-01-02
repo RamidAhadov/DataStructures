@@ -17,7 +17,13 @@ public class LinkedListDemo<T>:IEnumerable<T>,ICollection
     }
 
     public int Count => _count;
+
+    public T First => _head.Data;
+
+    public T Last => _tail.Data;
+
     public bool IsSynchronized => false;
+    
     public object SyncRoot => this;
     
     
@@ -92,6 +98,19 @@ public class LinkedListDemo<T>:IEnumerable<T>,ICollection
         return previousNode;
     }
 
+    private LinkedListNodeDemo<T> FindPreviousNode(LinkedListNodeDemo<T> node)
+    {
+        LinkedListNodeDemo<T> currentNode = _head;
+        LinkedListNodeDemo<T> previousNode = null;
+        while (!Equals(currentNode,node))
+        {
+            previousNode = currentNode;
+            currentNode = currentNode.Next ?? throw new ItemNotFoundException(ConstantMessages.ItemNotFound);
+        }
+
+        return previousNode;
+    }
+
     private void InsertNodeAfter(LinkedListNodeDemo<T> node,LinkedListNodeDemo<T> insertedNode)
     {
         insertedNode.Next = node.Next;
@@ -126,19 +145,88 @@ public class LinkedListDemo<T>:IEnumerable<T>,ICollection
     public void Remove(T item)
     {
         if (_head == null)
-            throw new EmptyListException(ConstantMessages.EmptyList);
-        if (item==null)
+            throw new EmptyListException(message:ConstantMessages.EmptyList);
+        if (item == null)
             throw new ArgumentNullException(ConstantMessages.NullItem);
         var node = FindNode(item);
-        bool result = RemoveNode(node);
-        if (!result)
-            throw new ItemNotFoundException(ConstantMessages.ItemNotFound);
+        if (Equals(node,_head)) RemoveFirstNode();
+        else if(Equals(node,_tail)) RemoveLastNode();
+        else
+        {
+            bool result = RemoveNode(node);
+            _count--;
+            if (!result)
+                throw new ItemNotFoundException(ConstantMessages.ItemNotFound);
+        }
     }
 
-    //Complete removals
+    public T RemoveFirst()
+    {
+        if (_head == null)
+            throw new EmptyListException(ConstantMessages.EmptyList);
+        var removedItem = RemoveFirstNode();
+        return removedItem;
+    }
+
+    private T RemoveFirstNode()
+    {
+        var removedItem = _head.Data;
+        _head = _head.Next;
+        _count--;
+        if (_count == 0)
+        {
+            _tail = null;
+        }
+        return removedItem;
+    }
+
+    public T RemoveLast()
+    {
+        if (_head == null)
+            throw new EmptyListException(ConstantMessages.EmptyList);
+        var removedItem = RemoveLastNode();
+        return removedItem;
+    }
+
+    private T RemoveLastNode()
+    {
+        var removedItem = _tail.Data;
+        if (_count == 1)
+        {
+            _head = null;
+            _tail = null;
+            _count = 0;
+            return removedItem;
+        }
+        var previousNode = FindPreviousNode(_tail);
+        previousNode.Next = null;
+        _tail = previousNode;
+        _count--;
+        
+        return removedItem;
+    }
+    
     private bool RemoveNode(LinkedListNodeDemo<T> node)
     {
-        return true;
+        LinkedListNodeDemo<T> currentNode = _head;
+        LinkedListNodeDemo<T> previousNode = null;
+        try
+        {
+            while (currentNode != node)
+            {
+                previousNode = currentNode;
+                currentNode = currentNode.Next;
+            }
+
+            previousNode.Next = currentNode.Next;
+            _head = previousNode;
+
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
     }
 
     public void Clear()

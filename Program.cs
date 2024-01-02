@@ -13,34 +13,49 @@ linkedListDemo.AddAfter(5,8); // 3 4 5 8 9 // 4
 
 linkedListDemo.AddBefore(4,12);
 
+linkedListDemo.Remove(12);
+linkedListDemo.Remove(3);
+linkedListDemo.Remove(9);
+
+foreach (var i in linkedListDemo)
+{
+    Console.WriteLine("---> Linked list Demo: " + i);
+}
+
 var arr = new int[6];
 
 linkedListDemo.CopyTo(arr,0);
 
 foreach (var i in arr)
 {
-    Console.WriteLine("New array: " + i);
+    //Console.WriteLine("New array: " + i);
 }
 
 Stopwatch stopwatch = new Stopwatch();
 
 Console.WriteLine("-------------------------------------------------------");
 LinkedListDemo<int> myLinkedList = new LinkedListDemo<int>();
-myLinkedList.AddLast(-1);
+//myLinkedList.AddLast(-1);
 
 stopwatch.Start();
 for (int i = 0; i < 10000; i++)
 {
-    //myLinkedList.AddBefore(-1,i);
+    myLinkedList.AddLast(i);
 }
 
-// foreach (var i in myLinkedList)
-// {
-//     Console.WriteLine(i);
-// }
+stopwatch.Stop();
+Console.WriteLine("My List (Add last): "+stopwatch.ElapsedMilliseconds);
+stopwatch.Reset();
+stopwatch.Start();
+
+for (int i = 0; i < 10000; i++)
+{
+    //myLinkedList.RemoveLast();
+    myLinkedList.Remove(i);
+}
 //bool myResult = myLinkedList.Contains(9999);
 stopwatch.Stop();
-Console.WriteLine("My List (Add before): "+stopwatch.ElapsedMilliseconds);
+Console.WriteLine("My List (Remove last): "+stopwatch.ElapsedMilliseconds);
 stopwatch.Reset();
 
 
@@ -51,14 +66,23 @@ LinkedList<int> dotNetLinkedList = new LinkedList<int>();
 //dotNetLinkedList.AddLast(5);
 //LinkedListNode<int> node = new LinkedListNode<int>(5);
 
+
+stopwatch.Start();
 for (int i = 0; i < 10000; i++)
 {
     dotNetLinkedList.AddLast(i);
 }
-stopwatch.Start();
-bool resultList = dotNetLinkedList.Contains(6000);
+//bool resultList = dotNetLinkedList.Contains(6000);
 stopwatch.Stop();
-Console.WriteLine("Dot Net List: "+stopwatch.ElapsedMilliseconds);
+Console.WriteLine("Dot Net List (Add last): "+stopwatch.ElapsedMilliseconds);
+stopwatch.Reset();
+stopwatch.Start();
+for (int i = 0; i < 10000; i++)
+{
+    dotNetLinkedList.RemoveLast();
+}
+stopwatch.Stop();
+Console.WriteLine("Dot Net List (Remove last): "+stopwatch.ElapsedMilliseconds);
 
 
 Console.WriteLine("-------------------------------------------------------");
