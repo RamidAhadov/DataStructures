@@ -1,0 +1,15 @@
+/Users/macbook/RiderProjects/DataStructures/DataStructuresDemo/bin/Debug/net7.0/DataStructuresDemo
+/Users/macbook/RiderProjects/DataStructures/DataStructuresDemo/bin/Debug/net7.0/DataStructuresDemo.deps.json
+/Users/macbook/RiderProjects/DataStructures/DataStructuresDemo/bin/Debug/net7.0/DataStructuresDemo.runtimeconfig.json
+/Users/macbook/RiderProjects/DataStructures/DataStructuresDemo/bin/Debug/net7.0/DataStructuresDemo.dll
+/Users/macbook/RiderProjects/DataStructures/DataStructuresDemo/bin/Debug/net7.0/DataStructuresDemo.pdb
+/Users/macbook/RiderProjects/DataStructures/DataStructuresDemo/obj/Debug/net7.0/DataStructuresDemo.csproj.AssemblyReference.cache
+/Users/macbook/RiderProjects/DataStructures/DataStructuresDemo/obj/Debug/net7.0/DataStructuresDemo.GeneratedMSBuildEditorConfig.editorconfig
+/Users/macbook/RiderProjects/DataStructures/DataStructuresDemo/obj/Debug/net7.0/DataStructuresDemo.AssemblyInfoInputs.cache
+/Users/macbook/RiderProjects/DataStructures/DataStructuresDemo/obj/Debug/net7.0/DataStructuresDemo.AssemblyInfo.cs
+/Users/macbook/RiderProjects/DataStructures/DataStructuresDemo/obj/Debug/net7.0/DataStructuresDemo.csproj.CoreCompileInputs.cache
+/Users/macbook/RiderProjects/DataStructures/DataStructuresDemo/obj/Debug/net7.0/DataStructuresDemo.dll
+/Users/macbook/RiderProjects/DataStructures/DataStructuresDemo/obj/Debug/net7.0/refint/DataStructuresDemo.dll
+/Users/macbook/RiderProjects/DataStructures/DataStructuresDemo/obj/Debug/net7.0/DataStructuresDemo.pdb
+/Users/macbook/RiderProjects/DataStructures/DataStructuresDemo/obj/Debug/net7.0/DataStructuresDemo.genruntimeconfig.cache
+/Users/macbook/RiderProjects/DataStructures/DataStructuresDemo/obj/Debug/net7.0/ref/DataStructuresDemo.dll
